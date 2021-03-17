@@ -83,6 +83,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         print('No image selected.');
       }
     });
+    //save in SD Card
+    // final  appDir = await getExternalStorageDirectory();
+    //save in phone storage
     final  appDir = await getApplicationDocumentsDirectory();
     var fileName = syspaths.basename( appDir.path);
     final File localImage = await _image.copy('${appDir.path}/$fileName');
