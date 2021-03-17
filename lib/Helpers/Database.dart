@@ -23,7 +23,7 @@ class DBProvider {
   initDB() async {
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
     String path = join(documentsDirectory.path, "UserDB.db");
-    return await openDatabase(path, version: 1, onOpen: (db) {},
+    return await openDatabase(path, version: 2, onOpen: (db) {},
         onCreate: (Database db, int version) async {
       await db.execute("CREATE TABLE User ("
           "id INTEGER PRIMARY KEY,"
@@ -33,19 +33,22 @@ class DBProvider {
           "doB TEXT,"
           "passport INTEGER,"
           "email TEXT,"
-          "picture TEXT"
+          "picture TEXT,"
+          "deviceName TEXT,"
+          "lat FLOAT,"
+          "lng FLOAT"
           ")");
     });
   }
 
   newUser(User newUser) async {
     final db = await database;
-    var table = await db.rawQuery("SELECT MAX(id)+1 as id FROM User");
-    int id = table.first["id"];
+    // var table = await db.rawQuery("SELECT MAX(id)+1 as id FROM User");
+    // int id = table.first["id"];
     var res = await db.rawInsert(
-        "INSERT Into User (id,IMEI,first_name,last_name,doB,passport,email,picture)"
-        " VALUES (?,?,?,?,?,?,?,?)",
-        [id,newUser.IMEI, newUser.firstName, newUser.lastName, newUser.doB,newUser.passport,newUser.email,newUser.picture]);
+        "INSERT Into User (IMEI,first_name,last_name,doB,passport,email,picture,deviceName,lat,lng)"
+        " VALUES (?,?,?,?,?,?,?,?,?,?)",
+        [newUser.IMEI, newUser.firstName, newUser.lastName, newUser.doB,newUser.passport,newUser.email,newUser.picture,newUser.deviceName,newUser.lat,newUser.lng]);
     return res;
   }
 

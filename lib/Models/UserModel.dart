@@ -19,28 +19,35 @@ class User {
   int passport;
   String email;
   String picture;
+  String deviceName;
+  double lat;
+  double lng;
 
-  User({
-    this.id,
-    this.IMEI,
-    this.firstName,
-    this.lastName,
-    this.doB,
-    this.passport,
-    this.email,
-    this.picture,
-  });
+  User(
+      {this.id,
+      this.IMEI,
+      this.firstName,
+      this.lastName,
+      this.doB,
+      this.passport,
+      this.email,
+      this.picture,
+      this.deviceName,
+      this.lat,
+      this.lng});
 
   factory User.fromMap(Map<String, dynamic> json) => new User(
-    id: json["id"],
-        IMEI: json["IMEI"],
-        firstName: json["first_name"],
-        lastName: json["last_name"],
-        doB: json["doB"],
-        passport: json["passport"],
-        email: json["email"],
-        picture: json["picture"],
-      );
+      id: json["id"],
+      IMEI: json["IMEI"],
+      firstName: json["first_name"],
+      lastName: json["last_name"],
+      doB: json["doB"],
+      passport: json["passport"],
+      email: json["email"],
+      picture: json["picture"],
+      deviceName: json["deviceName"],
+      lat: json["lat"],
+      lng: json["lng"]);
 
   Map<String, dynamic> toMap() => {
         "id": id,
@@ -51,5 +58,8 @@ class User {
         "passport": passport,
         "email": email,
         "picture": picture,
+        "deviceName": deviceName,
+        "lat": lat,
+        "lng": lng
       };
 }

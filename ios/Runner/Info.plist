@@ -20,6 +20,10 @@
     <string>Allow access to camera to capture photos</string>
     <key>NSMicrophoneUsageDescription</key>
     <string>Allow access to microphone</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>location use</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string> location use</string>
 	<key>CFBundleShortVersionString</key>
 	<string>$(FLUTTER_BUILD_NAME)</string>
 	<key>CFBundleSignature</key>

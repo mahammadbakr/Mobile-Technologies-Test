@@ -7,15 +7,17 @@ class MainTextField extends StatelessWidget {
   Function validator;
   IconData iconData;
   String hint;
+  TextEditingController controller;
 
   MainTextField(
-      {this.onChanged, this.validator, this.iconData, this.hint});
+      {this.onChanged, this.validator, this.iconData, this.hint,this.controller});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
         onChanged: onChanged,
         validator: validator,
+        controller: controller,
         showCursor: true,
         decoration: InputDecoration(
           border: OutlineInputBorder(
