@@ -20,6 +20,9 @@ dependencies:
   cupertino_icons: ^1.0.1
   sqflite: ^0.12.2+1
   path_provider: ^0.4.1
+  path: ^1.6.0
+  intl: ^0.16.1
+  image_picker: ^0.6.7+22
 
 dev_dependencies:
   flutter_test:
@@ -34,3 +37,19 @@ flutter:
   assets:
     - assets/images/
 
+  fonts:
+    - family: Cinzel
+      fonts:
+        - asset: assets/fonts/Cinzel-Regular.otf
+        - asset: assets/fonts/Cinzel-Regular.otf
+          weight: 100
+        - asset: assets/fonts/CinzelDecorative-Regular.otf
+          weight: 200
+        - asset: assets/fonts/Cinzel-Bold.otf
+          weight: 300
+        - asset: assets/fonts/CinzelDecorative-Bold.otf
+          weight: 400
+        - asset: assets/fonts/Cinzel-Black.otf
+          weight: 500
+        - asset: assets/fonts/CinzelDecorative-Black.otf
+          weight: 600

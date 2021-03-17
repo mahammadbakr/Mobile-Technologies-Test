@@ -14,14 +14,14 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(Duration(seconds: 2), () {
-      Navigator.pushNamed(context, '/home');
+      Navigator.pushNamed(context, '/registration');
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: PaletteColors.backgroundAppColor,
+      backgroundColor:  Colors.white70,
       body: Center(
         child: Image.asset("assets/images/gif.gif",width: 150,),
       ),

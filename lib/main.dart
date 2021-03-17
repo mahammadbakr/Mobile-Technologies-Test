@@ -17,12 +17,12 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        fontFamily:  "Cinzel",
         primaryColor: PaletteColors.mainAppColor,
         primarySwatch: Colors.deepPurple,
         appBarTheme: AppBarTheme(
           elevation: 3,
         ),
-        scaffoldBackgroundColor: PaletteColors.backgroundAppColor,
       ),
       title: 'Flutter New Test',
       initialRoute: '/',
